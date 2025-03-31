@@ -14,7 +14,13 @@ From leafqycc：
 - 使用多态实现 OpenCV 和 FFmpeg 实现视频加载器动态切换；增加了命令行参数解析，将很多可选功能的开关控制权开放到命令行；优化内存管理。
 
 # Project analysis
-CSDN：https://blog.csdn.net/plmm__/article/details/146542002?spm=1001.2014.3001.5501
+CSDN：
+
+### Overview:
+https://blog.csdn.net/plmm__/article/details/146542002?spm=1001.2014.3001.5501
+
+### Analysis
+https://blog.csdn.net/plmm__/article/details/146556955?spm=1001.2014.3001.5501
 
 # Instruction Manual
 ### （1）预装 OpenCV
