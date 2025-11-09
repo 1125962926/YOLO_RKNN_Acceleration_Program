@@ -3,32 +3,49 @@
 
 *YOLO multi-threaded and hardware-accelerated inference framework based on RKNN* 
 
----
-
-## 📌 基线 / Baseline 
-Forked from [leafqycc/rknn-cpp-Multithreading](https://github.com/leafqycc/rknn-cpp-Multithreading)
 
 ## 🏆 性能总结 / Performance Summary
-- **141 FPS → 151 FPS** 超越基线  
-  在作者的最高帧数141帧（C++）的基础上，使用 **RKmpp** 硬件解码和 **RGA** 硬件图像前处理，将推理帧数提高至 **151** 帧，还在优化中。
-- 关键技术优化 / Key optimizations:
+- ### **141 FPS → 151 FPS** 超越基线  
+  在原项目最高帧数141帧（C++）的基础上，使用 **RKmpp** 硬件解码和 **RGA** 硬件图像前处理，将推理帧数提高至 **151** 帧。
+- ### 关键优化技术 / *Key optimizations*
   - **RKmpp** 硬件解码 / *RKmpp hardware decoding*
   - **RGA** 硬件图像预处理 / *RGA hardware image preprocessing*
 
+
+
 ## 🛠 技术增强 / Technical Enhancements
-- 🎭 多态视频加载器（OpenCV/FFmpeg动态切换）  
+- ### 🎭 多态视频加载器（OpenCV/FFmpeg动态切换）  
   *Polymorphic video loader (OpenCV/FFmpeg dynamic switching)*
-- 🖥️ 命令行参数控制 / *Command-line parameter control*
-- 🧠 优化内存管理 / *Optimized memory management*
+- ### 🖥️ 命令行参数控制 / *Command-line parameter control*
+- ### 🧠 优化内存管理 / *Optimized memory management*
 
----
 
-## 📚 Project Analysis
-### CSDN Articles:
-- **Overview**: [![CSDN](https://img.shields.io/badge/CSDN-Overview-blue)](https://blog.csdn.net/plmm__/article/details/146542002)
-- **Technical Analysis**: [![CSDN](https://img.shields.io/badge/CSDN-Analysis-blue)](https://blog.csdn.net/plmm__/article/details/146556955)
 
----
+## ✨ 新特性支持 / New features
+- ### 图像传输 DMA 优化（计划 2.0 版本加入）
+    ```
+    状态：✅ 已验证理论并实测成功，待合并进本项目
+    ```
+    ### 核心改进：
+    - **技术路径**：将图像数据的传输方式从 CPU 搬运优化为 DMA（直接内存访问）传输。
+
+    - **核心机制**：通过传递文件描述符（fd）而非拷贝数据本身，实现内存零拷贝，显著提升数据传输效率。
+
+    ### 性能收益：
+    - ⚡ **大幅提速**：减少了 CPU 在数据搬运上的参与，直接加快了图像数据的传输速度。
+    - 💾 **显著降低 CPU 占用**：将 CPU 从繁重的数据拷贝任务中解放出来，为系统其他任务释放了宝贵的计算资源。
+
+    ### 指导文章：
+    - 优化方案的设计与代码实现已完成，相关原理和实现细节已在技术文章中深入探讨：[![CSDN](https://img.shields.io/badge/CSDN-Analysis-blue)](https://blog.csdn.net/plmm__/article/details/152009834?spm=1001.2014.3001.5502)
+    
+    
+
+## 📚 项目解析 / Project Analysis
+- ### CSDN 博客 / *CSDN Articles*
+    - **Overview**: [![CSDN](https://img.shields.io/badge/CSDN-Overview-blue)](https://blog.csdn.net/plmm__/article/details/146542002)
+    - **Technical Analysis**: [![CSDN](https://img.shields.io/badge/CSDN-Analysis-blue)](https://blog.csdn.net/plmm__/article/details/146556955)
+
+
 
 ## 📋 快速开始指南 / Quick Start Guide
 ### 1️⃣ 环境准备 / Prerequisites 
@@ -71,7 +88,7 @@ Forked from [leafqycc/rknn-cpp-Multithreading](https://github.com/leafqycc/rknn-
 
     *You can also directly execute the executable program, which will print the command-line parameter prompts.*
 
----
+
 
 ## 📂 项目结构 / Project Structure
 - `reference` 目录是官方的 demo
@@ -121,10 +138,13 @@ Forked from [leafqycc/rknn-cpp-Multithreading](https://github.com/leafqycc/rknn-
     └── 🎯 rkYolo.cpp
 ```
 
-## 联系方式 / Contact
-### 开发者 / Developer​​:
-✉️ Email / QQ: 1125962926@qq.com
+## 📌 基线 / Baseline 
+Forked from [leafqycc/rknn-cpp-Multithreading](https://github.com/leafqycc/rknn-cpp-Multithreading)
 
-💬 欢迎合作优化RKNN加速方案！
+## 💬 联系方式 / Contact
+### ✉️ 开发者 / Developer​​:
+Email / QQ: 1125962926@qq.com
+
+欢迎合作优化RKNN加速方案！
 
 *Let's collaborate on optimizing RKNN acceleration!*
